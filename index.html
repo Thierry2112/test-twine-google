@@ -104,8 +104,8 @@ window.setup.sheetId = "1oFVklcoOivAMbcreGJMQ0MWLVrKSTdgR";
 window.setup.apiKey = "AIzaSyC3wmBSO_dnn5OJQSx98XvZlR4NoOQYRg8";
 
 
-
 window.setup.readCell = function (cell) {
+  // Lire une cellule spécifiée de la feuille
   var range = "thierry!" + cell;
   var url = "https://sheets.googleapis.com/v4/spreadsheets/" + window.setup.sheetId + "/values/" + encodeURIComponent(range) + "?key=" + window.setup.apiKey;
   
@@ -125,7 +125,31 @@ window.setup.readCell = function (cell) {
     });
   });
 };
-);
+
+window.setup.writeCell = function (cell, value) {
+  // Écrire dans une cellule spécifiée de la feuille
+  var range = "thierry!" + cell;
+  var url = "https://sheets.googleapis.com/v4/spreadsheets/" + window.setup.sheetId + "/values/" + encodeURIComponent(range) + "?valueInputOption=USER_ENTERED&key=" + window.setup.apiKey;
+  
+  return new Promise(function (resolve, reject) {
+    jQuery.ajax({
+      url: url,
+      type: "PUT",
+      contentType: "application/json",
+      data: JSON.stringify({
+        "values": [[value]]
+      }),
+      success: function (data) {
+        console.log("Valeur '" + value + "' écrite avec succès dans la cellule " + cell + ".");
+        resolve();
+      },
+      error: function (xhr, status, error) {
+        console.log("Erreur lors de l'écriture dans la cellule " + cell + " : " + error);
+        reject(error);
+      }
+    });
+  });
+};
 </script><tw-passagedata pid="1" name="debut" tags="" position="325,200" size="100,100">[[ecrire]]
 [[lire]]
 </tw-passagedata><tw-passagedata pid="2" name="ecrire" tags="" position="200,400" size="100,100">:: Écrire dans une cellule
