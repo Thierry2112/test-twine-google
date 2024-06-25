@@ -159,31 +159,29 @@ Entrez la valeur à écrire dans la cellule :
 &lt;div id=&quot;message&quot;&gt;&lt;/div&gt;
 
 &lt;&lt;run
-  document.addEventListener(&quot;DOMContentLoaded&quot;, function() {
-    var writeButton = document.getElementById(&quot;writeButton&quot;);
-    writeButton.addEventListener(&quot;click&quot;, function() {
-      var cellInput = document.getElementById(&quot;cellInput&quot;);
-      var valueInput = document.getElementById(&quot;valueInput&quot;);
-      var cell = cellInput.value;
-      var value = valueInput.value;
-      
-      if (cell &amp;&amp; value) {
-        var message = document.getElementById(&quot;message&quot;);
-        
-        message.textContent = &quot;Écriture en cours...&quot;;
-        
-        window.setup.writeCell(cell, value)
-          .then(function() {
-            message.textContent = &quot;Écriture terminée avec succès !&quot;;
-          })
-          .catch(function(error) {
-            message.textContent = &quot;Erreur lors de l&#39;écriture : &quot; + error.message;
-          });
-      } else {
-        message.textContent = &quot;Veuillez entrer une référence de cellule et une valeur.&quot;;
-      }
-    });
+document.addEventListener(&quot;DOMContentLoaded&quot;, function() {
+  console.log(&quot;DOM chargé&quot;);
+
+  var writeButton = document.getElementById(&quot;writeButton&quot;);
+  console.log(&quot;Bouton d&#39;écriture :&quot;, writeButton);
+
+  writeButton.addEventListener(&quot;click&quot;, function() {
+    console.log(&quot;Bouton d&#39;écriture cliqué&quot;);
+
+    var cellInput = document.getElementById(&quot;cellInput&quot;);
+    var valueInput = document.getElementById(&quot;valueInput&quot;);
+    var cell = cellInput.value;
+    var value = valueInput.value;
+
+    console.log(&quot;Cellule :&quot;, cell);
+    console.log(&quot;Valeur :&quot;, value);
+
+    var message = document.getElementById(&quot;message&quot;);
+    console.log(&quot;Élément de message :&quot;, message);
+
+    message.textContent = &quot;Écriture en cours...&quot;;
   });
+});
 &gt;&gt;
 
 
