@@ -159,28 +159,30 @@ Entrez la valeur à écrire dans la cellule :
 &lt;div id=&quot;message&quot;&gt;&lt;/div&gt;
 
 &lt;&lt;run
-  var writeButton = document.getElementById(&quot;writeButton&quot;);
-  writeButton.addEventListener(&quot;click&quot;, function() {
-    var cellInput = document.getElementById(&quot;cellInput&quot;);
-    var valueInput = document.getElementById(&quot;valueInput&quot;);
-    var cell = cellInput.value;
-    var value = valueInput.value;
-    
-    if (cell &amp;&amp; value) {
-      var message = document.getElementById(&quot;message&quot;);
+  document.addEventListener(&quot;DOMContentLoaded&quot;, function() {
+    var writeButton = document.getElementById(&quot;writeButton&quot;);
+    writeButton.addEventListener(&quot;click&quot;, function() {
+      var cellInput = document.getElementById(&quot;cellInput&quot;);
+      var valueInput = document.getElementById(&quot;valueInput&quot;);
+      var cell = cellInput.value;
+      var value = valueInput.value;
       
-      message.textContent = &quot;Écriture en cours...&quot;;
-      
-      window.setup.writeCell(cell, value)
-        .then(function() {
-          message.textContent = &quot;Écriture terminée avec succès !&quot;;
-        })
-        .catch(function(error) {
-          message.textContent = &quot;Erreur lors de l&#39;écriture : &quot; + error.message;
-        });
-    } else {
-      message.textContent = &quot;Veuillez entrer une référence de cellule et une valeur.&quot;;
-    }
+      if (cell &amp;&amp; value) {
+        var message = document.getElementById(&quot;message&quot;);
+        
+        message.textContent = &quot;Écriture en cours...&quot;;
+        
+        window.setup.writeCell(cell, value)
+          .then(function() {
+            message.textContent = &quot;Écriture terminée avec succès !&quot;;
+          })
+          .catch(function(error) {
+            message.textContent = &quot;Erreur lors de l&#39;écriture : &quot; + error.message;
+          });
+      } else {
+        message.textContent = &quot;Veuillez entrer une référence de cellule et une valeur.&quot;;
+      }
+    });
   });
 &gt;&gt;
 
@@ -196,31 +198,33 @@ Entrez la référence de la cellule à lire (par exemple, &quot;A1&quot;, &quot;
 &lt;div id=&quot;cellValue&quot;&gt;&lt;/div&gt;
 
 &lt;&lt;run
-  var readButton = document.getElementById(&quot;readButton&quot;);
-  readButton.addEventListener(&quot;click&quot;, function() {
-    var cellInput = document.getElementById(&quot;cellInput&quot;);
-    var cell = cellInput.value;
-    
-    if (cell) {
-      var message = document.getElementById(&quot;message&quot;);
-      var cellValue = document.getElementById(&quot;cellValue&quot;);
+  document.addEventListener(&quot;DOMContentLoaded&quot;, function() {
+    var readButton = document.getElementById(&quot;readButton&quot;);
+    readButton.addEventListener(&quot;click&quot;, function() {
+      var cellInput = document.getElementById(&quot;cellInput&quot;);
+      var cell = cellInput.value;
       
-      message.textContent = &quot;Lecture en cours...&quot;;
-      cellValue.textContent = &quot;&quot;;
-      
-      window.setup.readCell(cell)
-        .then(function(value) {
-          message.textContent = &quot;Lecture terminée avec succès !&quot;;
-          cellValue.textContent = &quot;Valeur de la cellule &quot; + cell + &quot; : &quot; + value;
-        })
-        .catch(function(error) {
-          message.textContent = &quot;Erreur lors de la lecture : &quot; + error.message;
-          cellValue.textContent = &quot;&quot;;
-        });
-    } else {
-      message.textContent = &quot;Veuillez entrer une référence de cellule.&quot;;
-      cellValue.textContent = &quot;&quot;;
-    }
+      if (cell) {
+        var message = document.getElementById(&quot;message&quot;);
+        var cellValue = document.getElementById(&quot;cellValue&quot;);
+        
+        message.textContent = &quot;Lecture en cours...&quot;;
+        cellValue.textContent = &quot;&quot;;
+        
+        window.setup.readCell(cell)
+          .then(function(value) {
+            message.textContent = &quot;Lecture terminée avec succès !&quot;;
+            cellValue.textContent = &quot;Valeur de la cellule &quot; + cell + &quot; : &quot; + value;
+          })
+          .catch(function(error) {
+            message.textContent = &quot;Erreur lors de la lecture : &quot; + error.message;
+            cellValue.textContent = &quot;&quot;;
+          });
+      } else {
+        message.textContent = &quot;Veuillez entrer une référence de cellule.&quot;;
+        cellValue.textContent = &quot;&quot;;
+      }
+    });
   });
 &gt;&gt;
 
