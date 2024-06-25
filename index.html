@@ -158,34 +158,35 @@ Entrez la valeur à écrire dans la cellule :
 
 &lt;div id=&quot;message&quot;&gt;&lt;/div&gt;
 
-&lt;&lt;run
+&lt;script&gt;
 document.addEventListener(&quot;DOMContentLoaded&quot;, function() {
   console.log(&quot;DOM chargé&quot;);
 
   var writeButton = document.getElementById(&quot;writeButton&quot;);
   console.log(&quot;Bouton d&#39;écriture :&quot;, writeButton);
 
-  writeButton.addEventListener(&quot;click&quot;, function() {
-    console.log(&quot;Bouton d&#39;écriture cliqué&quot;);
+  if (writeButton) {
+    writeButton.onclick = function() {
+      console.log(&quot;Bouton d&#39;écriture cliqué&quot;);
 
-    var cellInput = document.getElementById(&quot;cellInput&quot;);
-    var valueInput = document.getElementById(&quot;valueInput&quot;);
-    var cell = cellInput.value;
-    var value = valueInput.value;
+      var cellInput = document.getElementById(&quot;cellInput&quot;);
+      var valueInput = document.getElementById(&quot;valueInput&quot;);
+      var cell = cellInput.value;
+      var value = valueInput.value;
 
-    console.log(&quot;Cellule :&quot;, cell);
-    console.log(&quot;Valeur :&quot;, value);
+      console.log(&quot;Cellule :&quot;, cell);
+      console.log(&quot;Valeur :&quot;, value);
 
-    var message = document.getElementById(&quot;message&quot;);
-    console.log(&quot;Élément de message :&quot;, message);
+      var message = document.getElementById(&quot;message&quot;);
+      console.log(&quot;Élément de message :&quot;, message);
 
-    message.textContent = &quot;Écriture en cours...&quot;;
-  });
+      message.textContent = &quot;Écriture en cours...&quot;;
+    };
+  } else {
+    console.log(&quot;Le bouton d&#39;écriture n&#39;a pas été trouvé.&quot;);
+  }
 });
-&gt;&gt;
-
-
-
+&lt;/script&gt;
 [[debut]]</tw-passagedata><tw-passagedata pid="3" name="lire" tags="" position="400,400" size="100,100">:: Lire une cellule
 Entrez la référence de la cellule à lire (par exemple, &quot;A1&quot;, &quot;B2&quot;, etc.) :
 &lt;input type=&quot;text&quot; id=&quot;cellInput&quot;&gt;
