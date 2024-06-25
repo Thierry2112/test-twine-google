@@ -171,7 +171,7 @@ Entrez la valeur à écrire dans la cellule :
     if (cell &amp;&amp; value) {
       jQuery(&quot;#message&quot;).text(&quot;Écriture en cours...&quot;);
       
-      setup.writeCell(cell, value).then(function() {
+      window.setup.writeCell(cell, value).then(function() {
         jQuery(&quot;#message&quot;).text(&quot;Écriture terminée avec succès !&quot;);
       }).catch(function(error) {
         jQuery(&quot;#message&quot;).text(&quot;Erreur lors de l&#39;écriture : &quot; + error);
@@ -199,7 +199,7 @@ Entrez la référence de la cellule à lire (par exemple, &quot;A1&quot;, &quot;
       jQuery(&quot;#message&quot;).text(&quot;Lecture en cours...&quot;);
       jQuery(&quot;#cellValue&quot;).text(&quot;&quot;);
       
-      setup.readCell(cell).then(function(value) {
+      window.setup.readCell(cell).then(function(value) {
         jQuery(&quot;#message&quot;).text(&quot;Lecture terminée avec succès !&quot;);
         jQuery(&quot;#cellValue&quot;).text(&quot;Valeur de la cellule &quot; + cell + &quot; : &quot; + value);
       }).catch(function(error) {
