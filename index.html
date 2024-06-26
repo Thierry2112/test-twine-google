@@ -145,7 +145,9 @@ window.setup.writeCell = function (cell, value) {
       console.log("Valeur '" + value + "' écrite avec succès dans la cellule " + cell + ".");
     });
 };
-</script><tw-passagedata pid="1" name="debut" tags="" position="325,200" size="100,100">[[ecrire]]
+</script><tw-passagedata pid="1" name="debut" tags="" position="325,200" size="100,100">debut version 13
+
+[[ecrire]]
 [[lire]]
 [[testjs]]
 [[liretestjs]]</tw-passagedata><tw-passagedata pid="2" name="ecrire" tags="" position="200,400" size="100,100">:: Écrire dans une cellule
@@ -197,7 +199,8 @@ Entrez la référence de la cellule à lire (par exemple, &quot;A1&quot;, &quot;
 &lt;div id=&quot;message&quot;&gt;&lt;/div&gt;
 &lt;div id=&quot;cellValue&quot;&gt;&lt;/div&gt;
 
-&lt;&lt;run
+&lt;script&gt;
+document.addEventListener(&quot;DOMContentLoaded&quot;, function() {
   var readButton = document.getElementById(&quot;readButton&quot;);
   readButton.addEventListener(&quot;click&quot;, function() {
     var cellInput = document.getElementById(&quot;cellInput&quot;);
@@ -224,7 +227,9 @@ Entrez la référence de la cellule à lire (par exemple, &quot;A1&quot;, &quot;
       cellValue.textContent = &quot;&quot;;
     }
   });
-&gt;&gt;
+});
+&lt;/script&gt;
+
 
 [[debut]]</tw-passagedata><tw-passagedata pid="4" name="StoryInit" tags="" position="675,350" size="100,100">&lt;&lt;set $titres = [&quot;Description&quot;,&quot;Libellé&quot;,&quot;Statut&quot;,&quot;Unité&quot;,&quot;Valeur initiale / Formule&quot;,&quot;equipe1_tour_depart&quot;,&quot;équipe1_tour_courant&quot;,&quot;equipe2_tour_depart&quot;,&quot;équipe2_tour_courant&quot;,&quot;equipe3_tour_depart&quot;,&quot;équipe3_tour_courant&quot;,&quot;equipe4_tour_depart&quot;,&quot;équipe4_tour_courant&quot;]&gt;&gt;
 &lt;&lt;set $D1 = [&quot;Nombre total d&#39;équipes (humaines + logiciel)&quot;,&quot;Nombre de tours/numéro tour&quot;,1,,8,,,,,,,,]&gt;&gt;
@@ -270,4 +275,3 @@ Entrez la référence de la cellule à lire (par exemple, &quot;A1&quot;, &quot;
 	</script>
 </body>
 </html>
-
