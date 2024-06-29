@@ -145,11 +145,10 @@ window.setup.writeCell = function (cell, value) {
       console.log("Valeur '" + value + "' écrite avec succès dans la cellule " + cell + ".");
     });
 };
-</script><tw-passagedata pid="1" name="debut" tags="" position="325,200" size="100,100">debut version 13
+</script><tw-passagedata pid="1" name="debut" tags="" position="325,200" size="100,100">debut version 14
 
 [[ecrire]]
 [[lire]]
-[[testjs]]
 [[liretestjs]]</tw-passagedata><tw-passagedata pid="2" name="ecrire" tags="" position="200,400" size="100,100">:: Écrire dans une cellule
 Entrez la référence de la cellule (par exemple, &quot;A1&quot;, &quot;B2&quot;, etc.) :
 &lt;input type=&quot;text&quot; id=&quot;cellInput&quot;&gt;
@@ -231,17 +230,7 @@ document.addEventListener(&quot;DOMContentLoaded&quot;, function() {
 &lt;/script&gt;
 
 
-[[debut]]</tw-passagedata><tw-passagedata pid="4" name="StoryInit" tags="" position="675,350" size="100,100">&lt;&lt;set $titres = [&quot;Description&quot;,&quot;Libellé&quot;,&quot;Statut&quot;,&quot;Unité&quot;,&quot;Valeur initiale / Formule&quot;,&quot;equipe1_tour_depart&quot;,&quot;équipe1_tour_courant&quot;,&quot;equipe2_tour_depart&quot;,&quot;équipe2_tour_courant&quot;,&quot;equipe3_tour_depart&quot;,&quot;équipe3_tour_courant&quot;,&quot;equipe4_tour_depart&quot;,&quot;équipe4_tour_courant&quot;]&gt;&gt;
-&lt;&lt;set $D1 = [&quot;Nombre total d&#39;équipes (humaines + logiciel)&quot;,&quot;Nombre de tours/numéro tour&quot;,1,,8,,,,,,,,]&gt;&gt;
-&lt;&lt;set $D2 = [&quot;Nombre total d&#39;équipes (humaines + logiciel)&quot;,&quot;Nombre d&#39;équipes&quot;,1,0,4,,,,,,,,]&gt;&gt;</tw-passagedata><tw-passagedata pid="5" name="testjs" tags="" position="325,575" size="100,100">:: Test JavaScript
-:: Start
-
-&lt;&lt;print &quot;D1[1] : &quot;&gt;&gt; &lt;&lt;print  $D1[1]&gt;&gt;
-&lt;&lt;print  &quot;D2[2] : &quot;&gt;&gt; &lt;&lt;print  $D2[2]&gt;&gt;
-&lt;&lt;print  &quot;D2[4] : &quot;&gt;&gt; &lt;&lt;print  $D2[4]&gt;&gt;
-
-&lt;&lt;set _total24 = $D2[2] + $D2[4]&gt;&gt;
-&lt;&lt;print &quot;D2[2] + D2[4] : &quot;&gt;&gt; &lt;&lt;print  _total24&gt;&gt;</tw-passagedata><tw-passagedata pid="6" name="liretestjs" tags="" position="450,575" size="100,100">:: Lire une cellule
+[[debut]]</tw-passagedata><tw-passagedata pid="4" name="liretestjs" tags="" position="450,575" size="100,100">:: Lire une cellule
 Entrez la référence de la cellule à lire (par exemple, &quot;A1&quot;, &quot;B2&quot;, etc.) :
 &lt;input type=&quot;text&quot; id=&quot;cellInput&quot;&gt;
 
@@ -275,3 +264,4 @@ Entrez la référence de la cellule à lire (par exemple, &quot;A1&quot;, &quot;
 	</script>
 </body>
 </html>
+
