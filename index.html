@@ -105,7 +105,7 @@ window.setup.apiKey = "AIzaSyC3wmBSO_dnn5OJQSx98XvZlR4NoOQYRg8";
 
 window.setup.readCell = function (cell) {
   // Lire une cellule spécifiée de la feuille
-  var range = "thierry!" + cell;
+  var range = "thierry!C2";
   var url = "https://sheets.googleapis.com/v4/spreadsheets/" + window.setup.sheetId + "/values/" + encodeURIComponent(range) + "?key=" + window.setup.apiKey;
   
   return fetch(url)
@@ -145,7 +145,7 @@ window.setup.writeCell = function (cell, value) {
       console.log("Valeur '" + value + "' écrite avec succès dans la cellule " + cell + ".");
     });
 };
-</script><tw-passagedata pid="1" name="debut" tags="" position="325,200" size="100,100">debut version 15
+</script><tw-passagedata pid="1" name="debut" tags="" position="325,200" size="100,100">debut version 16
 
 [[ecrire]]
 [[lire]]
@@ -276,5 +276,6 @@ document.addEventListener(&quot;DOMContentLoaded&quot;, function() {
 	</script>
 </body>
 </html>
+
 
 
