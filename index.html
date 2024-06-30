@@ -103,7 +103,7 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 window.setup.readData = function() {
   return new Promise(function(resolve, reject) {
     $.ajax({
-      url: 'https://script.google.com/macros/s/AKfycbyLGD2N0AbboA56TAXRkpID8DVOr2k965vnr-OwhZoy7ueoOVq9giqezsKJjnJsTQi7Pg/exec',
+      url: 'https://script.google.com/macros/s/AKfycbyt4sRo8LvahqinphCVHtpenoLOuC6ZCbomr7F2jYtEXFrR3siFK5UVbL7MfW53mLmvSg/exec',
       type: 'GET',
       dataType: 'json',
       success: function(data) {
@@ -119,7 +119,7 @@ window.setup.readData = function() {
 window.setup.writeData = function(data) {
   return new Promise(function(resolve, reject) {
     $.ajax({
-      url: 'https://script.google.com/macros/s/AKfycbyLGD2N0AbboA56TAXRkpID8DVOr2k965vnr-OwhZoy7ueoOVq9giqezsKJjnJsTQi7Pg/exec',
+      url: 'https://script.google.com/macros/s/AKfycbyt4sRo8LvahqinphCVHtpenoLOuC6ZCbomr7F2jYtEXFrR3siFK5UVbL7MfW53mLmvSg/exec',
       type: 'POST',
       data: JSON.stringify(data),
       success: function() {
@@ -149,7 +149,7 @@ window.readCell = function() {
     $('#result').text("Erreur lors de la lecture des données : " + error);
   });
 };
-</script><tw-passagedata pid="1" name="Debut" tags="" position="600,275" size="100,100">Test 28
+</script><tw-passagedata pid="1" name="Debut" tags="" position="600,275" size="100,100">Test 29
 
 [[lire]]
 [[ecrire]]
@@ -167,10 +167,3 @@ window.readCell = function() {
 	</script>
 </body>
 </html>
-
-
-
-
-
-
-
