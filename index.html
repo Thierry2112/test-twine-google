@@ -135,7 +135,7 @@ window.setup.writeData = function(data) {
 window.readCell = function() {
   var cell = $('input[name="cell"]').val();
   
-  setup.readData().then(function(data) {
+  window.setup.readData().then(function(data) {
     var row = cell.charAt(1) - 1;
     var col = cell.charCodeAt(0) - 65;
     
@@ -149,7 +149,7 @@ window.readCell = function() {
     $('#result').text("Erreur lors de la lecture des données : " + error);
   });
 };
-</script><tw-passagedata pid="1" name="Debut" tags="" position="600,275" size="100,100">Test 26
+</script><tw-passagedata pid="1" name="Debut" tags="" position="600,275" size="100,100">Test 27
 
 [[lire]]
 [[ecrire]]
@@ -167,7 +167,6 @@ window.readCell = function() {
 	</script>
 </body>
 </html>
-
 
 
 
