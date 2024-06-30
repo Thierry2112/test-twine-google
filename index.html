@@ -98,7 +98,9 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 		<div id="init-lacking"><p>Browser lacks capabilities required to play.</p><p>Upgrade or switch to another browser.</p></div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<tw-storydata name="test-google" startnode="1" creator="Twine" creator-version="2.9.0" format="SugarCube" format-version="2.36.1" ifid="6D1BDB1E-F51C-430C-BE7B-DA7298B36DFA" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript">setup.readData = function() {
+	<tw-storydata name="test-google" startnode="1" creator="Twine" creator-version="2.9.0" format="SugarCube" format-version="2.36.1" ifid="6D1BDB1E-F51C-430C-BE7B-DA7298B36DFA" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript">window.setup = window.setup || {};
+
+setup.readData = function() {
   return new Promise(function(resolve, reject) {
     $.ajax({
       url: 'https://script.google.com/macros/s/AKfycbw3WKXnK4iM4LfKx-YwsdjSISv_0gmH9fRE7CEhbRPuc5f8-Tzieq8eaIknlzkP1SBFuQ/exec',
@@ -129,7 +131,7 @@ setup.writeData = function(data) {
     });
   });
 };
-</script><tw-passagedata pid="1" name="Passage sans titre" tags="" position="600,275" size="100,100">Test 21
+</script><tw-passagedata pid="1" name="Passage sans titre" tags="" position="600,275" size="100,100">Test 22
 
 [[lire]]
 [[ecrire]]
@@ -143,7 +145,7 @@ setup.writeData = function(data) {
 function readCell() {
   var cell = $(&#39;input[name=&quot;cell&quot;]&#39;).val();
   
-  setup.readData().then(function(data) {
+  window.setup.readData().then(function(data) {
     var row = cell.charAt(1) - 1;
     var col = cell.charCodeAt(0) - 65;
     
@@ -162,6 +164,7 @@ $(document).ready(function() {
   $(&#39;#readButton&#39;).click(readCell);
 });
 &lt;/script&gt;
+
 </tw-passagedata><tw-passagedata pid="4" name="ecrire" tags="" position="725,400" size="100,100"></tw-passagedata></tw-storydata>
 	<script id="script-sugarcube" type="text/javascript">
 	/*! SugarCube JS */
@@ -169,6 +172,7 @@ $(document).ready(function() {
 	</script>
 </body>
 </html>
+
 
 
 
