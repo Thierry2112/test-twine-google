@@ -132,7 +132,24 @@ window.setup.writeData = function(data) {
   });
 };
 
-</script><tw-passagedata pid="1" name="Debut" tags="" position="600,275" size="100,100">Test 25
+window.readCell = function() {
+  var cell = $('input[name="cell"]').val();
+  
+  setup.readData().then(function(data) {
+    var row = cell.charAt(1) - 1;
+    var col = cell.charCodeAt(0) - 65;
+    
+    if (row >= 0 && row < data.length && col >= 0 && col < data[0].length) {
+      var content = data[row][col];
+      $('#result').text("Contenu de la cellule " + cell + " : " + content);
+    } else {
+      $('#result').text("Coordonnées de cellule invalides.");
+    }
+  }).catch(function(error) {
+    $('#result').text("Erreur lors de la lecture des données : " + error);
+  });
+};
+</script><tw-passagedata pid="1" name="Debut" tags="" position="600,275" size="100,100">Test 26
 
 [[lire]]
 [[ecrire]]
@@ -143,28 +160,6 @@ window.setup.writeData = function(data) {
 &lt;&lt;/button&gt;&gt;
 
 &lt;div id=&quot;result&quot;&gt;&lt;/div&gt;
-
-&lt;&lt;script&gt;&gt;
-function readCell() {
-  var cell = State.getVar(&#39;$cell&#39;);
-  
-  window.setup.readData().then(function(data) {
-    var row = cell.charAt(1) - 1;
-    var col = cell.charCodeAt(0) - 65;
-    
-    if (row &gt;= 0 &amp;&amp; row &lt; data.length &amp;&amp; col &gt;= 0 &amp;&amp; col &lt; data[0].length) {
-      var content = data[row][col];
-      $(&#39;#result&#39;).text(&quot;Contenu de la cellule &quot; + cell + &quot; : &quot; + content);
-    } else {
-      $(&#39;#result&#39;).text(&quot;Coordonnées de cellule invalides.&quot;);
-    }
-  }).catch(function(error) {
-    $(&#39;#result&#39;).text(&quot;Erreur lors de la lecture des données : &quot; + error);
-  });
-}
-&lt;&lt;/script&gt;&gt;
-
-
 </tw-passagedata><tw-passagedata pid="4" name="ecrire" tags="" position="725,400" size="100,100"></tw-passagedata></tw-storydata>
 	<script id="script-sugarcube" type="text/javascript">
 	/*! SugarCube JS */
@@ -172,6 +167,7 @@ function readCell() {
 	</script>
 </body>
 </html>
+
 
 
 
