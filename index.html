@@ -103,7 +103,7 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 window.setup.readData = function() {
   return new Promise(function(resolve, reject) {
     $.ajax({
-      url: 'https://script.google.com/macros/s/AKfycbw3WKXnK4iM4LfKx-YwsdjSISv_0gmH9fRE7CEhbRPuc5f8-Tzieq8eaIknlzkP1SBFuQ/exec',
+      url: 'https://script.google.com/macros/s/AKfycbxd-B7m6qM9sdLNgaqR_XLy69Ehs-wec3RSCzZwk4Q9aEsjwbd66O-Yrdrr2nNxp-JQ0Q/exec',
       type: 'GET',
       dataType: 'json',
       success: function(data) {
@@ -119,7 +119,7 @@ window.setup.readData = function() {
 window.setup.writeData = function(data) {
   return new Promise(function(resolve, reject) {
     $.ajax({
-      url: 'https://script.google.com/macros/s/AKfycbw3WKXnK4iM4LfKx-YwsdjSISv_0gmH9fRE7CEhbRPuc5f8-Tzieq8eaIknlzkP1SBFuQ/exec',
+      url: 'https://script.google.com/macros/s/AKfycbxd-B7m6qM9sdLNgaqR_XLy69Ehs-wec3RSCzZwk4Q9aEsjwbd66O-Yrdrr2nNxp-JQ0Q/exec',
       type: 'POST',
       data: JSON.stringify(data),
       success: function() {
@@ -132,7 +132,7 @@ window.setup.writeData = function(data) {
   });
 };
 
-</script><tw-passagedata pid="1" name="Passage sans titre" tags="" position="600,275" size="100,100">Test 23
+</script><tw-passagedata pid="1" name="Debut" tags="" position="600,275" size="100,100">Test 25
 
 [[lire]]
 [[ecrire]]
@@ -148,7 +148,7 @@ window.setup.writeData = function(data) {
 function readCell() {
   var cell = State.getVar(&#39;$cell&#39;);
   
-  setup.readData().then(function(data) {
+  window.setup.readData().then(function(data) {
     var row = cell.charAt(1) - 1;
     var col = cell.charCodeAt(0) - 65;
     
@@ -172,6 +172,7 @@ function readCell() {
 	</script>
 </body>
 </html>
+
 
 
 
